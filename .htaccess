@@ -6,3 +6,8 @@ ErrorDocument 404 /404.html
 
 # Disable directory browsing
 Options -Indexes
+
+# libwww-perl vulnerability fix
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+RewriteRule .* ? [F,L]
